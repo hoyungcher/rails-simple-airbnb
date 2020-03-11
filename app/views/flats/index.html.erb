@@ -1,0 +1,22 @@
+
+<div class="container text-center">
+  <h1>All our Flats (<%= @flats.all.count %>)</h1>
+</div>
+<div class="container">
+  <% @flats.each do |flat| %>
+    <div class="card m-1" style="width: 18rem;">
+      <img class="card-img-top" src="https://picsum.photos/id/<%= (1..500).to_a.sample %>/300/200" alt="Card image cap">
+      <div class="card-body">
+        <p class="card-text"><strong><%= flat.name %></strong></p>
+        <p class="card-text"><%= flat.description %></p>
+        <p style="margin-bottom:0px;"><i class="fas fa-bed fa-lg"></i> <%= flat.number_of_guests %> <i class="fas fa-dollar-sign fa-lg"></i> <%= flat.price_per_night %></p>
+      </div>
+      <div class="card-footer d-flex justify-content-around align-middle">
+        <a href="flats/<%= flat.id %>" style="color:#398EFF;">More info</a>
+        <a href="flats/<%= flat.id %>/edit" style="color:#d6d611;">Edit</a>
+        <a href="flats/<%= flat.id %>" style="color:#E14C54;">Remove</a>
+      </div>
+    </div>
+
+  <% end %>
+</div>

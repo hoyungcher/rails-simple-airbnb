@@ -1,0 +1,15 @@
+<h1>Create a new flat listing</h1>
+<%= simple_form_for @flat do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :name %>
+
+  <%= f.input :address %>
+
+  <%= f.input :description, as: :text %>
+
+  <%= f.input :price_per_night, as: :integer %>
+
+  <%= f.input :number_of_guests, as: :integer %>
+
+  <%= f.submit "Create listing", class: "btn btn-primary" %>
+<% end %>
